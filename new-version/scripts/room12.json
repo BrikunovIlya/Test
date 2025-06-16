@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Сокровищница. Сундуки пусты, но в воздухе витает магия защиты."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Стража сокровищницы", 
+                    "level": 13,
+                    "actions": ["attack", "attack", "guard"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "MYTHIC"}
+            ]
+        }
+    ]
+}

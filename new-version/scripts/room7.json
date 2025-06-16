@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Святилище культа Хаста. Стены покрыты кошмарными фресками."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Жрец культа Хаста", 
+                    "level": 8,
+                    "actions": ["attack", "boost", "guard"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "EPIC"}
+            ]
+        }
+    ]
+}

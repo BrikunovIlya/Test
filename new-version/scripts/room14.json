@@ -1,0 +1,22 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Портал в иное измерение пульсирует темной энергией. Древнее зло пробуждается!"},
+                {
+                    "type": "spawn", 
+                    "enemy": "Хаст - Древнее Зло", 
+                    "level": 15,
+                    "actions": ["attack", "boost", "boost"]
+                },
+                {"type": "battle"},
+                {
+                    "type": "dialog", 
+                    "text": "С последним вздохом древнего зла портал схлопывается. Каркоза спасена!"
+                },
+                {"type": "treasure", "rarity": "MYTHIC"}
+            ]
+        }
+    ]
+}
