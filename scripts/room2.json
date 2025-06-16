@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Тронный зал древнего короля опустошен. На троне сидит лишь тень былого величия."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Тень короля", 
+                    "level": 3,
+                    "actions": ["attack", "boost", "heal"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "UNCOMMON"}
+            ]
+        }
+    ]
+}

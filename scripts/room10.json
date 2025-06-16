@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Оранжерея с ядовитыми растениями. Цветы шипят, когда ты проходишь мимо."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Ядовитый плющ", 
+                    "level": 11,
+                    "actions": ["attack", "guard", "heal"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "MYTHIC"}
+            ]
+        }
+    ]
+}

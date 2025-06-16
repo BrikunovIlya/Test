@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Оружейная комната. Стены уставлены заржавевшим оружием, но кое-что еще можно использовать."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Призрак оружейника", 
+                    "level": 4,
+                    "actions": ["attack", "attack", "boost"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "UNCOMMON"}
+            ]
+        }
+    ]
+}

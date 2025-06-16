@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Затопленный подвал. Вода по колено, пахнет гнилью и разложением."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Затопленный утопленник", 
+                    "level": 9,
+                    "actions": ["attack", "heal", "guard"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "LEGENDARY"}
+            ]
+        }
+    ]
+}

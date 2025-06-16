@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Запретная библиотека хранит знания, которые сводят с ума. Книги шепчутся на забытых языках."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Пожиратель знаний", 
+                    "level": 5,
+                    "actions": ["attack", "guard", "guard"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "RARE"}
+            ]
+        }
+    ]
+}

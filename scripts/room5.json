@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Темница наполнена стонами узников. Цепи на стенах шевелятся сами по себе."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Скелет-страж", 
+                    "level": 6,
+                    "actions": ["attack", "heal", "boost"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "RARE"}
+            ]
+        }
+    ]
+}

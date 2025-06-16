@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "Обсерватория. Разбитый телескоп указывает на искаженные созвездия."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Темный астролог", 
+                    "level": 7,
+                    "actions": ["attack", "attack", "heal"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "EPIC"}
+            ]
+        }
+    ]
+}

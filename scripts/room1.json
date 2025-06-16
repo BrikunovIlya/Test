@@ -1,0 +1,19 @@
+{
+    "events": [
+        {
+            "trigger": "enter",
+            "actions": [
+                {"type": "dialog", "text": "В лаборатории алхимика что-то булькает в колбах. Ядовитые пары заполняют воздух."},
+                {
+                    "type": "spawn", 
+                    "enemy": "Безумный алхимик", 
+                    "level": 2,
+                    "actions": ["attack", "guard", "heal"]
+                },
+                {"type": "battle"},
+                {"type": "treasure", "rarity": "COMMON"}
+            ]
+        }
+    ]
+}
+
