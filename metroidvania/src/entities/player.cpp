@@ -3,6 +3,11 @@
 #include <algorithm>
 #include <iostream>
 
+/**
+ * @brief Конструктор класса Player, задающий начальную позицию персонажа.
+ * @param startX Начальная координата x персонажа.
+ * @param startY Начальная координата y персонажа.
+ */
 Player::Player(float startX, float startY) : x(startX), y(startY) {
     abilities["double_jump"] = false;
     abilities["dash"] = false;
@@ -11,12 +16,16 @@ Player::Player(float startX, float startY) : x(startX), y(startY) {
     checkpointY = static_cast<int>(y);
 }
 
+/**
+ * @brief Обновляет состояние персонажа, включая движение, физику и перезарядку.
+ * @param map Игровая карта для проверки столкновений.
+ */
 void Player::Update(std::vector<std::vector<int>>& map) {
-    // Apply physics
+    // Применение физики
     Physics::ApplyGravity(dy, onGround);
     Physics::LimitVelocity(dx, dy);
     
-    // Movement
+    // Движение
     float newX = x + dx;
     if (!Physics::CheckCollision(newX, y, map)) {
         x = newX;
@@ -35,7 +44,7 @@ void Player::Update(std::vector<std::vector<int>>& map) {
     
     Physics::ApplyFriction(dx);
     
-    // Update cooldowns
+    // Обновление таймеров перезарядки
     if (dashCooldown > 0) dashCooldown--;
     if (dashTimer > 0) dashTimer--;
     if (attackCooldown > 0) attackCooldown--;
@@ -44,6 +53,9 @@ void Player::Update(std::vector<std::vector<int>>& map) {
     UpdateProjectiles();
 }
 
+/**
+ * @brief Выполняет прыжок или двойной прыжок, если доступно.
+ */
 void Player::Jump() {
     if (onGround) {
         dy = JUMP_FORCE;
@@ -55,6 +67,9 @@ void Player::Jump() {
     }
 }
 
+/**
+ * @brief Инициирует рывок, если способность доступна и не на перезарядке.
+ */
 void Player::Dash() {
     if (dashCooldown == 0 && abilities["dash"]) {
         dx = facingRight ? MAX_SPEED * 3 : -MAX_SPEED * 3;
@@ -64,6 +79,9 @@ void Player::Dash() {
     }
 }
 
+/**
+ * @brief Выполняет атаку, создавая снаряд, если атака не на перезарядке.
+ */
 void Player::Attack() {
     if (attackCooldown == 0) {
         attackCooldown = 20;
@@ -71,6 +89,9 @@ void Player::Attack() {
     }
 }
 
+/**
+ * @brief Обновляет позиции всех активных снарядов и удаляет те, что вышли за границы.
+ */
 void Player::UpdateProjectiles() {
     for (auto it = projectiles.begin(); it != projectiles.end(); ) {
         it->first += facingRight ? 0.8f : -0.8f;
@@ -82,6 +103,11 @@ void Player::UpdateProjectiles() {
     }
 }
 
+/**
+ * @brief Отрисовывает персонажа на экране с учетом смещения.
+ * @param offsetX Смещение по x для рендеринга (позиция камеры).
+ * @param offsetY Смещение по y для рендеринга (позиция камеры).
+ */
 void Player::Draw(int offsetX, int offsetY) const {
     if (invincibility > 0 && invincibility % 4 < 2) return;
     
