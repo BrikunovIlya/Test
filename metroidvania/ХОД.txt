@@ -1,0 +1,33 @@
+Шаг 1: Установка инструментов
+Для Windows:
+
+Установите MinGW-w64
+
+Добавьте путь к компилятору в PATH (например, C:\mingw64\bin)
+
+Установите Git
+
+Для Linux:
+
+bash
+sudo apt update
+sudo apt install build-essential git -y
+Шаг 2: Создание структуры проекта
+bash
+mkdir -p metroidvania/src/{game,entities,systems,utils}
+cd metroidvania
+touch Makefile
+touch src/main.cpp
+touch src/game/{game.cpp,game.h,level.cpp,level.h}
+touch src/entities/{player.cpp,player.h,enemy.cpp,enemy.h}
+touch src/systems/{physics.cpp,physics.h,render.cpp,render.h,input.cpp,input.h}
+touch src/utils/{console.cpp,console.h,save_system.cpp,save_system.h}
+Шаг 3: Наполнение файлов
+Скопируйте содержимое каждого скрипта в соответствующий файл в проекте.
+
+Шаг 4: Компиляция (Windows)
+bash
+g++ -Isrc -o game.exe src/main.cpp src/game/*.cpp src/entities/*.cpp src/systems/*.cpp src/utils/*.cpp -lgdi32 -lwinmm
+Шаг 5: Запуск
+bash
+game.exe

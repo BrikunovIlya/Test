@@ -1,0 +1,26 @@
+metroidvania/
+├── src/
+│   ├── main.cpp
+│   ├── game/
+│   │   ├── game.cpp
+│   │   ├── game.h
+│   │   ├── level.cpp
+│   │   ├── level.h
+│   ├── entities/
+│   │   ├── player.cpp
+│   │   ├── player.h
+│   │   ├── enemy.cpp
+│   │   ├── enemy.h
+│   ├── systems/
+│   │   ├── physics.cpp
+│   │   ├── physics.h
+│   │   ├── render.cpp
+│   │   ├── render.h
+│   │   ├── input.cpp
+│   │   ├── input.h
+│   ├── utils/
+│   │   ├── console.cpp
+│   │   ├── console.h
+│   │   ├── save_system.cpp
+│   │   ├── save_system.h
+└── Makefile
